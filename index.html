@@ -1,6 +1,40 @@
 <!doctype html>
 <head> Login Page
 </head>
+<p></p>
 <body>
   This is the Log In page.
+  
 </body>
+<script>
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+const firebaseConfig = {
+  apiKey: "AIzaSyDKXGqUjhL9Ho-VmMHWfoI3E8RDxqzWTi8",
+  authDomain: "website-caliotters.firebaseapp.com",
+  projectId: "website-caliotters",
+  storageBucket: "website-caliotters.appspot.com",
+  messagingSenderId: "267096537048",
+  appId: "1:267096537048:web:8d0dfdc8dcbefad96fa4ad",
+  measurementId: "G-LV11BQSSD3"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+</script>
